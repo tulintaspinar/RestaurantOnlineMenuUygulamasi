@@ -41,10 +41,6 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Drink"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //}
     },
     {
       "UpstreamPathTemplate": "/api/Drink/{drink_id}",
@@ -57,15 +53,7 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Drink/{drink_id}"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"RouteClaimsRequirement": {
-      //  "Role": "Administrator"
-      //}
     },
-
     //Drink web api ocelot end
 
     //Order web api ocelot start
