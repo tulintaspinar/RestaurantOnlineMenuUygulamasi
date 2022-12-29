@@ -1,0 +1,131 @@
+{
+  "Routes": [
+    //Burger web api ocelot start
+    {
+      "UpstreamPathTemplate": "/api/Burger",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "burgerwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Burger"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Burger/{burger_id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "burgerwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Burger/{burger_id}"
+    },
+    //Burger web api ocelot end 
+
+    //Drink web api ocelot start
+    {
+      "UpstreamPathTemplate": "/api/Drink",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "drinkwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Drink"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //}
+    },
+    {
+      "UpstreamPathTemplate": "/api/Drink/{drink_id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "drinkwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Drink/{drink_id}"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Administrator"
+      //}
+    },
+
+    //Drink web api ocelot end
+
+    //Order web api ocelot start
+    {
+      "UpstreamPathTemplate": "/api/Order",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Order"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Order/{order_id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Order/{order_id}"
+    },
+
+    //Order web api ocelot end
+
+    //Menu web api ocelot start
+    {
+      "UpstreamPathTemplate": "/api/Menu",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "menuwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Menu"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Menu/{menu_id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "menuwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Menu/{menu_id}"
+    }
+    //Menu web api ocelot end 
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:800"
+  }
+}

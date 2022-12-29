@@ -1,0 +1,42 @@
+﻿@model List<MenuViewModel>
+@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        count++;
+        <div class="row">
+            <div class="col-xl-6">
+                <form method="post" asp-action="AddOrder" asp-controller="Order">
+                    <input type="hidden" name="Name" value="@item.Name">
+                    <input type="hidden" name="Price" value="@item.Price">
+                    <input type="hidden" name="Description" value="@item.Description">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">@item.Name</h5>
+                        </div>
+                        <div class="card-body d-sm-flex justify-content-between align-items-center">
+                            <div class="card-footer-link mb-4 mb-sm-0">
+                                <p class="card-text text-dark d-inline">Price: @item.Price</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text">@item.Description</p>                      
+                                <button type="submit" class="btn btn-rounded btn-info">
+                                    <span class="btn-icon-left text-info">
+                                        <i class="fa fa-plus color-info"></i>
+                                    </span>
+                                    Add
+                                </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+}

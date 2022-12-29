@@ -1,0 +1,36 @@
+﻿@model DrinkViewModel
+@{
+    ViewData["Title"] = "EditDrinkInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">DRINK</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+                    <input type="hidden" asp-for="DrinkID" />
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label col-form-label-sm">NAME</label>
+                        <div class="col-sm-10">
+                            <input type="text" asp-for="Name" class="form-control form-control-sm" placeholder="Drink Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">PRICE</label>
+                        <div class="col-sm-10">
+                            <input type="text" asp-for="Price" class="form-control" placeholder="Drink Unit Price">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-info">
+                        UPDATE DRINK
+                        <span class="btn-icon-right"><i class="fa fa-heart"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
